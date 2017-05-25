@@ -12,22 +12,19 @@ describe('Hello.vue', () => {
     });
 
     it('should also work with propsData', () => {
+        var container = document.createElement('div');
+
         const Comp = Vue.extend({
-            el:body,
             props: ['msg'],
             template: '<div>{{ msg }}</div>'
         });
 
         const vm = new Comp({
-            el:body,
-            template: '<div>{{ msg }}</div>',
+            el: container,
             propsData: {
                 msg: "Gogo Gadget"
             }
-        }).$mount();
+        });
         expect(vm.$el.textContent).toBe('Gogo Gadget')
     });
 });
-
-// also see example testing a component with mocks at
-// https://github.com/vuejs/vueify-example/blob/master/test/unit/a.spec.js#L22-L43
