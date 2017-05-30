@@ -1,6 +1,9 @@
 # test-monkey
 
-> a test project for propData in a karma test in vue with karma and browserify
+A test project for propData using Vue 1.0.28 with karma, browserify and jasmine
+
+Also a place to collect examples of tests for various types of situations
+
 
 ## Build Setup
 
@@ -21,4 +24,10 @@ npm run lint
 npm test
 ```
 
-For more information see the [docs for vueify](https://github.com/vuejs/vueify).
+For more information see the docs for
+
+    1. [vueify](https://github.com/vuejs/vueify).
+    2. [karma](https://github.com/karma-runner/karma).
+    3. [browserify](https://github.com/substack/node-browserify#usage).
+    4. [jasmine](https://jasmine.github.io/api/2.6/global).
+    

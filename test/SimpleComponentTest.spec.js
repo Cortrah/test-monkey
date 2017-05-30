@@ -1,40 +1,5 @@
 import Vue from 'vue'
-import SimpleComponent from './SimpleComponent.vue'
-
-let MyApp = function () {
-    let getFlag = function () {
-        return false;
-    };
-
-    let useFlagForSomething = function () {
-        if (this.getFlag() === true) {
-            return "It was true";
-        } else {
-            return "It was false";
-        }
-    };
-
-    return {
-        getFlag: getFlag,
-        useFlagForSomething: useFlagForSomething
-    };
-};
-
-describe("Testing spies", function () {
-
-    it("Should replace the return value of function being spied on", function () {
-        // Arrange
-        let myApp = new MyApp();
-        spyOn(myApp, "getFlag").and.returnValue(true);
-
-        // Act
-        let result = myApp.useFlagForSomething();
-
-        // Assert
-        expect(result).toEqual("It was true");
-    });
-
-});
+import SimpleComponent from '../src/components/SimpleComponent.vue'
 
 describe('SimpleComponent', () => {
 
