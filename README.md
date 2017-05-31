@@ -26,12 +26,12 @@ npm test
 
 For more information see the docs for
 
-    [vueify](https://github.com/vuejs/vueify).
-    
-    [karma](https://github.com/karma-runner/karma).
-    
-    [browserify](https://github.com/substack/node-browserify#usage).
-    
-    [jasmine](https://jasmine.github.io/api/2.6/global).
+[vueify](https://github.com/vuejs/vueify).
+
+[karma](https://github.com/karma-runner/karma).
+
+[browserify](https://github.com/substack/node-browserify#usage).
+
+[jasmine](https://jasmine.github.io/api/2.6/global).
     
         
