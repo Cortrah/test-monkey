@@ -24,6 +24,6 @@ describe('PropsData Tests', () => {
         let container = document.createElement('div');
 
         const vm = new Vue(PropsMsg).$mount();
-        expect(vm.$el.textContent).toBe('Gogo Gadget');
+        expect(vm.$el.querySelector('.msg h1').textContent).toBe('Gogo Gadget');
     });
 });
