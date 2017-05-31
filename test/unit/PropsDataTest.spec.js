@@ -20,10 +20,10 @@ describe('PropsData Tests', () => {
         expect(vm.$el.textContent).toBe('Gogo Gadget');
     });
 
-    it('A Component loaded from src should also work with propsData', () => {
-        let container = document.createElement('div');
-
-        const vm = new Vue(PropsMsg).$mount();
-        expect(vm.$el.querySelector('.msg h1').textContent).toBe('Gogo Gadget');
-    });
+    // it('A Component loaded from src should also work with propsData', () => {
+    //     let container = document.createElement('div');
+    //
+    //     const vm = new Vue(PropsMsg).$mount();
+    //     expect(vm.$el.querySelector('.msg h1').textContent).toBe('Gogo Gadget');
+    // });
 });
