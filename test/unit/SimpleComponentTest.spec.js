@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import SimpleComponent from '../src/components/SimpleComponent.vue'
+import SimpleComponent from '../../src/components/SimpleComponent.vue'
 
 describe('SimpleComponent', () => {
 

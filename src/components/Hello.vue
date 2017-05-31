@@ -1,13 +1,11 @@
 <template>
     <div class="hello">
         <h1>{{ msg }}</h1>
-        <h2>{{ otherMsg }}</h2>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['otherMsg'],
         data () {
             return {
                 // Note: modifying `msg` below will not cause changes to occur with
