@@ -6,6 +6,9 @@
 
 <script>
     export default {
-        props: ['msg']
+        props: {
+            "msg": String,
+            "default": "Gogo Gadget"
+        }
     }
 </script>

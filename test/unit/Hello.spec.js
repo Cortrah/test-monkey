@@ -11,8 +11,8 @@ describe('Hello.vue', () => {
         expect(vm.$el.querySelector('.hello h1').textContent).toBe('Hello World!')
     });
 
-    //it('should do the same from a component loaded from src', () => {
-    //    const vm = new Hello().$mount();
-    //    expect(vm.$el.querySelector('.hello h1').textContent).toBe('Hello World!')
-    //});
+    it('should do the same from a component loaded from src', () => {
+       const vm = new Vue(Hello).$mount();
+       expect(vm.$el.querySelector('.hello h1').textContent).toBe('Hello World!')
+    });
 });

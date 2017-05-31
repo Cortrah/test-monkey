@@ -23,11 +23,10 @@ describe('SimpleComponent', () => {
     });
 
     // Mount an instance and inspect the render output
-    // it('renders the correct message', () => {
-    //     const SimpleComponent = Vue.extend(SimpleComponent);
-    //     const vm = new SimpleComponent().$mount();
-    //     vm.$nextTick(function(){
-    //         expect(vm.$el.textContent).toBe('goodbye!')
-    //     })
-    // })
+    it('renders the correct message', () => {
+        const vm = new Vue(SimpleComponent).$mount();
+        vm.$nextTick(function(){
+            expect(vm.$el.textContent).toBe('goodbye!')
+        })
+    })
 });
