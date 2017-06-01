@@ -6,12 +6,12 @@ describe('PropsData Tests', () => {
     it('A local Component should work with propsData', () => {
         let container = document.createElement('div');
 
-        const Comp = Vue.extend({
+        const PropsMsg = Vue.extend({
             props: ['msg'],
             template: '<div>{{ msg }}</div>'
         });
 
-        const vm = new Comp({
+        const vm = new PropsMsg({
             el: container,
             propsData: {
                 msg: "Gogo Gadget"
@@ -29,8 +29,6 @@ describe('PropsData Tests', () => {
                 msg: "Gogo Gadget"
             }
         }).$mount();
-        vm.$nextTick(function(){
-            expect(vm.$el.querySelector('.msg h1').textContent).toBe('Gogo Gadget');
-        });
+        expect(vm.$el.textContent).toBe('Gogo Gadget');
     });
 });

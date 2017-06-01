@@ -14,14 +14,16 @@ So what kinds of concerns do we typically need to test and how do we typically g
 ## Testing Templates
     . render the appropriate html output with the provided props data
     . complex arrays and objects are correctly iterated through and interpolated in the template output
-    . pros and cons of getting refs and el's of collections via id's vs a classname
+    . getting refs and els of collections via ids or classnames
 
 ## Testing Views
-    . sets and gets it's default props (partially overlapping models responsability) 
-    . nulls, undefined and other simple types
-    . reference types and custom objects
+    . -- partially overlapping models responsability --
+    . sets and overrides it's default props  
+    . nulls and undefined for simple types
+    . nulls and undefined for reference types and custom objects
     . validation
-    . initialization sequence overrides between; data, props, computed, methods, watch
+    . initialization sequence overrides between; props, data, computed, methods, watch  
+    . -- more traditional view issues --
     . binding template data to it's attributes 
     . el gets added to the dom when given a place to be mounted, and is displayed after a tick
     . replace=false overwrites the elements inner conent without replacing the element itself
@@ -34,62 +36,58 @@ So what kinds of concerns do we typically need to test and how do we typically g
     . testing that hook mixins call hooks in the correct order
     . testing that methods, components and directives in mixins override and execute only once
     . explicitly test any custom logic that doesn't use one of those two forms of merging mixins
-    . transitions? (css or js cases different) 
+    . transitions (css or js cases different) 
     . parent child relationships
     . slots as a special kind of child
     . containers and collections map to proper props and items (of proper types if mixed)
     . interactions    
 
-## Testing Models    
+Models and Controllers are a strange one as vue doesn't technically have them, but nevertheless 
+I think if we look into the use of traditional models and controllers we'll find that there are analogs here.
 
-We're not using any models in data monkey currently but we are passing around complex objects
+At the very least we need to be sure that the vueific way covers the traditional uses of them.
 
-The vue docs specifically warn against passing around complex objects 
-And doing so violates the law of demeter (which while having a silly name, is a reasonable notion)
-
-Not sure where I stand with this in the universal sense but if we were using traditional models 
-I'd focus on checking that for simple models
-
-    . nulls, undefined and other simple types
-    . reference types and custom objects
+## Testing Models (stores or es6 classes?)
+    . a prop of an es6 class sent in as a prop can be split into and used in the view
+    . that es6 class can check and/or pass through
+    . nulls and undefined for simple types
+    . nulls and undefined for reference types and custom objects
     . validation
     . objects can be instantiated with supplied values or using default values
     . data can be synchronized with a store both locally and remotely
     . custom and built in events fire and/or are consumed on appropriate state changes
     . validation logic accurately distiquishes the correctness of attribute data
 
-and for collections which are lists or groups of models (largely in v-fors)
-
+## Collections which are lists or groups of models (largely in v-fors)
     . that a collection can be created with or without a list or group of elements
     . that model objects can be added and removed
     . that events are triggered on container and model changes
     . data can be synchronized with a store both locally and remotely
     . distinguish between whether the list is of a uniform type or of mixed types
     
-I think some of these we'll want to do in the vue view with it's props, but having actual models 
-that are assembled and taken apart at the component level is worth thinking about
-
-As well as adding controllers, in particular to get fine grained undo/redo and playback
-
 ## Testing Controllers
 
-This is a strange one as vue doesn't have controllers, but nevertheless 
-I think if we look into the use of traditional controllers we'll find that there are analogs here.
+What do I mean by controller? Not the client server model that folk typically mean nowdays.
+I mean a queue that accepts child events with data or command objects and either
+exectutes them or forwards them to a parent. Probably some relationship with vuex.
+
+A good concrete example would be a Vue component that orchestrates a sequence 
+of programmatic child animations via events. Or to receive, save, load and run 
+a fine grained list of commands for undo/redo and playback
+
+    . can receive and store a list of commands or events with data
+    . can execute those commands or events with data 
+    . can pause the execution of those events
+    . can save and load them to localstorage
 
 ## Testing Routers
-   
-One of those analogs, most likely. Passing data into routers
-
     . Url routes are accurately matched to views and actions
     . We can split a route into parallel subroutes
     . A router maintains the browser history corectly after navigation events
     
-## Utilities
-    
+## Utilities    
     usually pretty straightforward function tests
 
 ## Other Thoughts and Questions
-
-When to unit test or test end to end
-How do you do the command patten in vue? Modify veux or just use it?
-Different ways of appending and instantiating dynamically
+    When to unit test or test end to end
+    Different ways of appending and instantiating dynamic elements
