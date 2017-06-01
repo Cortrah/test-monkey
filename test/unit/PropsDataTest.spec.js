@@ -26,6 +26,19 @@ describe('PropsData Tests', () => {
         expect(vm.$el.textContent).toBe('Gogo Gadget');
     });
 
+    it('A Component loaded from src should also work with propsData', () => {
+        let container = document.createElement('div');
+        let Ctor = Vue.extend(PropsMsg);
+
+        const vm = new Ctor({
+            el: container,
+            propsData: {
+                msg: "Gogo Gadget"
+            }
+        }).$mount();
+        expect(vm.$el.textContent).toBe('Gogo Gadget');
+    });
+
     it('renders correctly with different props', () => {
         expect(getRenderedText( PropsMsg, {
             msg: 'Hello'
@@ -34,32 +47,4 @@ describe('PropsData Tests', () => {
             msg: 'Bye'
         })).toBe('Bye');
     });
-
-    // function getRenderedText (Component, propsData) {
-    //     const Ctor = Vue.extend(Component);
-    //     const vm = new Ctor({ propsData: propsData }).$mount();
-    //     return vm.$el.textContent
-    // }
-    //
-    // it('renders correctly with different props', () => {
-    //     expect(getRenderedText( PropsMsg, {
-    //         msg: 'Hello'
-    //     })).toBe('Hello');
-    //     expect(getRenderedText( PropsMsg, {
-    //         msg: 'Bye'
-    //     })).toBe('Bye');
-    // });
-
-    // it('A Component loaded from src should also work with propsData', () => {
-    //     let container = document.createElement('div');
-    //     let Ctor = Vue.extend(PropsMsg);
-    //
-    //     const vm = new Ctor({
-    //         el: container,
-    //         propsData: {
-    //             msg: "Gogo Gadget"
-    //         }
-    //     }).$mount();
-    //     expect(vm.$el.textContent).toBe('Gogo Gadget');
-    // });
 });
