@@ -2,8 +2,12 @@ import Vue from 'vue';
 import PropsMsg from '../../src/components/PropsMsg.vue';
 
 function getRenderedText (Component, propsData) {
+    const container = document.createElement('div');
     const Ctor = Vue.extend(Component);
-    const vm = new Ctor({ propsData: propsData }).$mount();
+    const vm = new Ctor({
+        el: container,
+        propsData: propsData
+    });
     return vm.$el.textContent
 }
 
@@ -41,12 +45,12 @@ describe('PropsData Tests', () => {
         });
     });
 
-    // it('renders correctly with different props', () => {
-    //     expect(getRenderedText( PropsMsg, {
-    //         msg: 'Hello'
-    //     })).toBe('Hello');
-    //     expect(getRenderedText( PropsMsg, {
-    //         msg: 'Bye'
-    //     })).toBe('Bye');
-    // });
+    it('renders correctly with different props', () => {
+        expect(getRenderedText( PropsMsg, {
+            msg: 'Hello'
+        })).toBe('Hello');
+        expect(getRenderedText( PropsMsg, {
+            msg: 'Bye'
+        })).toBe('Bye');
+    });
 });
