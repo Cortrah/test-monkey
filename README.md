@@ -1,12 +1,48 @@
 # test-monkey
 
-A test project specifically for propData using Vue 1.0.28 with karma, browserify and jasmine
+Notes on what to test and links to examples and tools to do it with vue.
 
-Also a place to collect examples of tests for various types of situations
+# Update
+
+It looks like the vue community is on the job and are merging a bunch of exiting tools into an official test utility
+
+It's not installable yet but looking good
+
+https://github.com/vuejs/vue-test-utils
+
+Sources
+
+https://github.com/eddyerburgh/avoriaz (requires vue 2)
+
+https://github.com/callumacrae/vue-test (supports vue 1)
+
+https://github.com/jackmellis/vuenit
+
+https://jackmellis.gitbooks.io/vuenit/content/
+
+
+# Related Links
+
+https://www.metachris.com/2017/05/how-to-test-vue.js-plugins-and-extensions/
+
+https://github.com/BosNaufal/vuex-saga
+
+https://alligator.io/vuejs/testing-vuex-vue/
+
+
+https://github.com/davidmoshal/reactive-vue-typescript-testing/tree/master/src
+
+https://www.drydenwilliams.co.uk/code/2017/06/03/unit-testing-in-vuejs/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=revue
+
+https://github.com/vuejs/vue/tree/dev/test/unit/features/options
+
+https://gist.github.com/roberthamel/670640351ccac7a63630ec8b68537455
+
+
 
 # Notes
 
-So what kinds of concerns do we typically need to test and how do we typically go about them in vue?
+What kinds of concerns do we typically need to test and how do we typically go about them in vue?
 
 ## Testing Api Calls
     . configuration
