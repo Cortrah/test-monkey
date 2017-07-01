@@ -1,4 +1,4 @@
-# test-monkey
+# Test Monkey
 
 Notes on what to test and links to examples and tools to do it with vue.
 
