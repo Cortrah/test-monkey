@@ -6,11 +6,10 @@ Notes on what to test and links to examples of how to do it with vue.
 
 It looks like the vue community is on the job and are merging a bunch of exiting tools into an official test utility
 
-It's not installable yet but looking good
-
 https://github.com/vuejs/vue-test-utils
 
-Sources
+
+# Prior Art
 
 https://github.com/eddyerburgh/avoriaz (requires vue 2)
 
@@ -18,10 +17,15 @@ https://github.com/callumacrae/vue-test (supports vue 1)
 
 https://github.com/jackmellis/vuenit
 
+https://github.com/wrseward/vue-unit
+
+
+# Examples
+
 https://jackmellis.gitbooks.io/vuenit/content/
 
 
-# Related Links
+# Articles
 
 https://www.metachris.com/2017/05/how-to-test-vue.js-plugins-and-extensions/
 
